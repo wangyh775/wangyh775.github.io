@@ -1,0 +1,90 @@
+---
+// 主题切换组件 - 支持 light/dark 模式切换
+---
+
+<div class="flex justify-center items-center my-4">
+  <button
+    id="theme-toggle"
+    class="btn btn-sm btn-ghost gap-2"
+    aria-label="切换主题"
+    title="切换主题"
+  >
+    <svg
+      id="theme-toggle-light-icon"
+      class="w-5 h-5 hidden"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0 001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0 011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465 5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414 1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+        fill-rule="evenodd"
+        clip-rule="evenodd"></path>
+    </svg>
+    <svg
+      id="theme-toggle-dark-icon"
+      class="w-5 h-5 hidden"
+      fill="currentColor"
+      viewBox="0 0 20 20"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+    </svg>
+    <span id="theme-toggle-text" class="text-sm">主题</span>
+  </button>
+</div>
+
+<script>
+  const themeToggleBtn = document.getElementById("theme-toggle");
+  const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+  const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+  const themeToggleText = document.getElementById("theme-toggle-text");
+
+  // DaisyUI 主题列表：浅色主题和深色主题
+  const lightThemes = ["light", "cupcake", "bumblebee", "emerald", "corporate", "retro", "cyberpunk", "valentine", "garden", "lofi", "pastel", "fantasy", "wireframe", "cmyk", "autumn", "acid", "lemonade", "winter"];
+  const darkThemes = ["dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim"];
+
+  // 默认主题
+  const defaultLightTheme = "lofi";
+  const defaultDarkTheme = "dark";
+
+  // 获取当前主题
+  function getCurrentTheme() {
+    return localStorage.getItem("theme") || defaultLightTheme;
+  }
+
+  // 判断是否为深色主题
+  function isDarkTheme(theme) {
+    return darkThemes.includes(theme);
+  }
+
+  // 更新图标显示
+  function updateIcon(theme) {
+    if (isDarkTheme(theme)) {
+      themeToggleLightIcon?.classList.remove("hidden");
+      themeToggleDarkIcon?.classList.add("hidden");
+      themeToggleText && (themeToggleText.textContent = "浅色");
+    } else {
+      themeToggleLightIcon?.classList.add("hidden");
+      themeToggleDarkIcon?.classList.remove("hidden");
+      themeToggleText && (themeToggleText.textContent = "深色");
+    }
+  }
+
+  // 切换主题
+  function toggleTheme() {
+    const currentTheme = getCurrentTheme();
+    const newTheme = isDarkTheme(currentTheme) ? defaultLightTheme : defaultDarkTheme;
+    
+    document.documentElement.setAttribute("data-theme", newTheme);
+    localStorage.setItem("theme", newTheme);
+    updateIcon(newTheme);
+  }
+
+  // 初始化
+  const currentTheme = getCurrentTheme();
+  updateIcon(currentTheme);
+
+  // 绑定点击事件
+  themeToggleBtn?.addEventListener("click", toggleTheme);
+</script>
