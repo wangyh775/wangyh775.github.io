@@ -1,0 +1,189 @@
+- generic [ref=f5e2]:
+  - generic [ref=f5e3]:
+    - link "Skip to content" [ref=f5e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=f5e6]:
+      - heading "Navigation Menu" [level=2] [ref=f5e7]
+      - generic [ref=f5e8]:
+        - link "Homepage" [ref=f5e10] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f5e13]:
+          - navigation "Global" [ref=f5e16]:
+            - list [ref=f5e17]:
+              - listitem [ref=f5e18]:
+                - button "Platform" [ref=f5e20] [cursor=pointer]
+              - listitem [ref=f5e23]:
+                - button "Solutions" [ref=f5e25] [cursor=pointer]
+              - listitem [ref=f5e28]:
+                - button "Resources" [ref=f5e30] [cursor=pointer]
+              - listitem [ref=f5e33]:
+                - button "Open Source" [ref=f5e35] [cursor=pointer]
+              - listitem [ref=f5e38]:
+                - button "Enterprise" [ref=f5e40] [cursor=pointer]
+              - listitem [ref=f5e43]:
+                - link "Pricing" [ref=f5e44] [cursor=pointer]:
+                  - /url: https://github.com/pricing
+          - generic [ref=f5e46]:
+            - button "Search or jump to…" [ref=f5e49] [cursor=pointer]:
+              - generic [ref=f5e53]: Search or jump to...
+            - link "Sign in" [ref=f5e59] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fwangyh775%2Fwangyh775.github.io%2Factions%2Fruns%2F30620235918
+            - link "Sign up" [ref=f5e60] [cursor=pointer]:
+              - /url: /signup?ref_cta=Sign+up&ref_loc=header+logged+out&ref_page=%2F%3Cuser-name%3E%2F%3Crepo-name%3E%2Factions%2Fworkflow_runs%2Fshow&source=header-repo&source_repo=wangyh775%2Fwangyh775.github.io
+            - button "Appearance settings" [ref=f5e63] [cursor=pointer]
+  - main [ref=f5e67]:
+    - generic [ref=f5e68]:
+      - generic [ref=f5e69]:
+        - generic [ref=f5e70]:
+          - generic [ref=f5e72]:
+            - link "wangyh775" [ref=f5e76] [cursor=pointer]:
+              - /url: /wangyh775
+            - generic [ref=f5e77]: /
+            - strong [ref=f5e78]:
+              - link "wangyh775.github.io" [ref=f5e79] [cursor=pointer]:
+                - /url: /wangyh775/wangyh775.github.io
+            - generic [ref=f5e80]: Public
+          - generic [ref=f5e81]:
+            - list:
+              - listitem [ref=f5e82]:
+                - link "You must be signed in to change notification settings" [ref=f5e83] [cursor=pointer]:
+                  - /url: /login?return_to=%2Fwangyh775%2Fwangyh775.github.io
+                  - text: Notifications
+              - listitem [ref=f5e86]:
+                - link "Fork 0" [ref=f5e87] [cursor=pointer]:
+                  - /url: /login?return_to=%2Fwangyh775%2Fwangyh775.github.io
+                  - text: Fork
+                  - generic "0" [ref=f5e90]
+              - listitem [ref=f5e91]:
+                - link "You must be signed in to star a repository" [ref=f5e93] [cursor=pointer]:
+                  - /url: /login?return_to=%2Fwangyh775%2Fwangyh775.github.io
+                  - text: Star
+                  - generic "0 users starred this repository" [ref=f5e96]: "0"
+        - navigation "Repository" [ref=f5e97]:
+          - list [ref=f5e98]:
+            - listitem [ref=f5e99]:
+              - link "Code" [ref=f5e100] [cursor=pointer]:
+                - /url: /wangyh775/wangyh775.github.io
+            - listitem [ref=f5e104]:
+              - link "Issues" [ref=f5e105] [cursor=pointer]:
+                - /url: /wangyh775/wangyh775.github.io/issues
+            - listitem [ref=f5e110]:
+              - link "Pull requests" [ref=f5e111] [cursor=pointer]:
+                - /url: /wangyh775/wangyh775.github.io/pulls
+            - listitem [ref=f5e115]:
+              - link "Actions" [ref=f5e116] [cursor=pointer]:
+                - /url: /wangyh775/wangyh775.github.io/actions
+            - listitem [ref=f5e120]:
+              - link "Projects" [ref=f5e121] [cursor=pointer]:
+                - /url: /wangyh775/wangyh775.github.io/projects
+            - listitem [ref=f5e125]:
+              - link "Security and quality" [ref=f5e126] [cursor=pointer]:
+                - /url: /wangyh775/wangyh775.github.io/security
+            - listitem [ref=f5e130]:
+              - link "Insights" [ref=f5e131] [cursor=pointer]:
+                - /url: /wangyh775/wangyh775.github.io/pulse
+      - generic [ref=f5e139]:
+        - generic [ref=f5e142]:
+          - link "Deploy to GitHub Pages" [ref=f5e145] [cursor=pointer]:
+            - /url: /wangyh775/wangyh775.github.io/actions/workflows/deploy.yml
+          - generic [ref=f5e149]:
+            - generic [ref=f5e150]:
+              - img "failed:" [ref=f5e154]
+              - 'heading "fix: add trailing slash to site and set base: ''/'' for GitHub Pages #5" [level=1] [ref=f5e156]'
+            - link "Sign in to view logs" [ref=f5e160] [cursor=pointer]:
+              - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fwangyh775%2Fwangyh775.github.io%2Factions%2Fruns%2F30620235918
+        - generic [ref=f5e161]:
+          - navigation "Workflow run" [ref=f5e167]:
+            - list [ref=f5e168]:
+              - listitem [ref=f5e169]:
+                - link "Summary" [ref=f5e170] [cursor=pointer]:
+                  - /url: /wangyh775/wangyh775.github.io/actions/runs/30620235918
+              - generic [ref=f5e173]:
+                - heading "All jobs" [level=4] [ref=f5e174]
+                - button "Filter by job status" [ref=f5e175] [cursor=pointer]
+              - listitem [ref=f5e178]
+              - listitem:
+                - list
+              - listitem [ref=f5e179]
+              - listitem [ref=f5e180]:
+                - heading "Run details" [level=3] [ref=f5e182]
+                - list "Run details" [ref=f5e183]:
+                  - listitem [ref=f5e184]:
+                    - link "Usage" [ref=f5e185] [cursor=pointer]:
+                      - /url: /wangyh775/wangyh775.github.io/actions/runs/30620235918/usage
+                  - listitem [ref=f5e188]:
+                    - link "Workflow file" [ref=f5e189] [cursor=pointer]:
+                      - /url: /wangyh775/wangyh775.github.io/actions/runs/30620235918/workflow
+          - generic [ref=f5e193]:
+            - region "Workflow run summary" [ref=f5e194]:
+              - generic [ref=f5e195]:
+                - generic [ref=f5e196]:
+                  - generic [ref=f5e197]: Triggered via push July 31, 2026 09:3119 minutes ago
+                  - generic [ref=f5e198]:
+                    - link [ref=f5e199] [cursor=pointer]:
+                      - /url: /wangyh775
+                      - img "@wangyh775" [ref=f5e200]
+                      - text: wangyh775
+                    - generic [ref=f5e201]:
+                      - generic [ref=f5e202]: pushed
+                      - link "9a3c8e8" [ref=f5e203] [cursor=pointer]:
+                        - /url: /wangyh775/wangyh775.github.io/commit/9a3c8e8ca8f54c5445c97fbf3cef9a9884ea3a80
+                    - link "main" [ref=f5e206] [cursor=pointer]:
+                      - /url: /wangyh775/wangyh775.github.io/tree/refs/heads/main
+                - generic [ref=f5e207]:
+                  - generic [ref=f5e208]: Status
+                  - text: Failure
+                - generic [ref=f5e209]:
+                  - generic [ref=f5e210]: Total duration
+                  - link "29s" [ref=f5e211] [cursor=pointer]:
+                    - /url: /wangyh775/wangyh775.github.io/actions/runs/30620235918/usage
+                - generic [ref=f5e212]:
+                  - generic [ref=f5e213]: Artifacts
+                  - text: –
+            - region "Workflow run graph" [ref=f5e214]:
+              - generic [ref=f5e216]:
+                - generic [ref=f5e218]:
+                  - heading [level=2] [ref=f5e219]:
+                    - link "deploy.yml" [ref=f5e220] [cursor=pointer]:
+                      - /url: /wangyh775/wangyh775.github.io/actions/runs/30620235918/workflow
+                  - generic [ref=f5e221]: "on: push"
+                - generic [ref=f5e223]:
+                  - generic [ref=f5e224]:
+                    - 'link "failed: build 24s" [ref=f5e228] [cursor=pointer]':
+                      - /url: /wangyh775/wangyh775.github.io/actions/runs/30620235918/job/91122820771
+                      - generic [ref=f5e230]:
+                        - img "failed:" [ref=f5e232]
+                        - generic [ref=f5e234]: build
+                        - generic [ref=f5e236]: 24s
+                    - 'link "skipped: deploy 0s" [ref=f5e241] [cursor=pointer]':
+                      - /url: /wangyh775/wangyh775.github.io/actions/runs/30620235918/job/91122910567
+                      - generic [ref=f5e243]:
+                        - img "skipped:" [ref=f5e245]
+                        - generic [ref=f5e247]: deploy
+                        - generic [ref=f5e249]: 0s
+                  - generic [ref=f5e251]:
+                    - paragraph [ref=f5e252]: Oh hello! Nice to see you.
+                    - paragraph [ref=f5e253]:
+                      - text: Made with ❤️ by
+                      - link [ref=f5e254] [cursor=pointer]:
+                        - /url: https://actions.github.io/humans.txt
+                        - text: humans.txt
+                - generic [ref=f5e255]:
+                  - button "Fit to window" [disabled] [ref=f5e256]
+                  - generic [ref=f5e257]:
+                    - button "Zoom out" [disabled] [ref=f5e259]
+                    - button "Zoom in" [disabled] [ref=f5e261]
+            - region "Annotations" [ref=f5e262]:
+              - generic [ref=f5e263]:
+                - generic [ref=f5e265]:
+                  - heading "Annotations" [level=2] [ref=f5e266]
+                  - generic [ref=f5e267]: 1 error
+                - table [ref=f5e268]:
+                  - rowgroup [ref=f5e269]:
+                    - row [ref=f5e270]:
+                      - cell "build Process completed with exit code 1." [ref=f5e271]:
+                        - generic [ref=f5e276]:
+                          - link [ref=f5e277] [cursor=pointer]:
+                            - /url: /wangyh775/wangyh775.github.io/actions/runs/30620235918/job/91122820771#step:3:157
+                            - strong [ref=f5e278]: build
+                          - generic [ref=f5e279]: Process completed with exit code 1.
