@@ -1,0 +1,203 @@
+- generic [ref=f2e2]:
+  - generic [ref=f2e3]:
+    - link "Skip to content" [ref=f2e4] [cursor=pointer]:
+      - /url: "#start-of-content"
+    - banner [ref=f2e6]:
+      - heading "Navigation Menu" [level=2] [ref=f2e7]
+      - generic [ref=f2e9]:
+        - button "Toggle navigation" [ref=f2e11] [cursor=pointer]
+        - link "Homepage" [ref=f2e17] [cursor=pointer]:
+          - /url: /
+        - generic [ref=f2e20]:
+          - link "Sign in" [ref=f2e21] [cursor=pointer]:
+            - /url: /login?return_to=https%3A%2F%2Fgithub.com%2Fwangyh775%2Fwangyh775.github.io%2Factions
+          - button "Appearance settings" [ref=f2e24] [cursor=pointer]
+  - main [ref=f2e28]:
+    - generic [ref=f2e29]:
+      - generic [ref=f2e30]:
+        - generic [ref=f2e32]:
+          - link "wangyh775" [ref=f2e36] [cursor=pointer]:
+            - /url: /wangyh775
+          - generic [ref=f2e37]: /
+          - strong [ref=f2e38]:
+            - link "wangyh775.github.io" [ref=f2e39] [cursor=pointer]:
+              - /url: /wangyh775/wangyh775.github.io
+          - generic [ref=f2e40]: Public
+        - generic [ref=f2e41]:
+          - list:
+            - listitem [ref=f2e42]:
+              - link "You must be signed in to change notification settings" [ref=f2e43] [cursor=pointer]:
+                - /url: /login?return_to=%2Fwangyh775%2Fwangyh775.github.io
+                - text: Notifications
+            - listitem [ref=f2e46]:
+              - link "Fork 0" [ref=f2e47] [cursor=pointer]:
+                - /url: /login?return_to=%2Fwangyh775%2Fwangyh775.github.io
+                - text: Fork
+                - generic "0" [ref=f2e50]
+            - listitem [ref=f2e51]:
+              - link "You must be signed in to star a repository" [ref=f2e53] [cursor=pointer]:
+                - /url: /login?return_to=%2Fwangyh775%2Fwangyh775.github.io
+                - text: Star
+                - generic "0 users starred this repository" [ref=f2e56]: "0"
+      - navigation "Repository" [ref=f2e57]:
+        - list [ref=f2e58]:
+          - listitem [ref=f2e59]:
+            - link "Code" [ref=f2e60] [cursor=pointer]:
+              - /url: /wangyh775/wangyh775.github.io
+          - listitem [ref=f2e64]:
+            - link "Issues" [ref=f2e65] [cursor=pointer]:
+              - /url: /wangyh775/wangyh775.github.io/issues
+          - listitem [ref=f2e70]:
+            - link "Pull requests" [ref=f2e71] [cursor=pointer]:
+              - /url: /wangyh775/wangyh775.github.io/pulls
+          - listitem [ref=f2e75]:
+            - link "Actions" [ref=f2e76] [cursor=pointer]:
+              - /url: /wangyh775/wangyh775.github.io/actions
+          - listitem [ref=f2e80]:
+            - link "Projects" [ref=f2e81] [cursor=pointer]:
+              - /url: /wangyh775/wangyh775.github.io/projects
+          - listitem [ref=f2e85]:
+            - link "Security and quality" [ref=f2e86] [cursor=pointer]:
+              - /url: /wangyh775/wangyh775.github.io/security
+          - listitem [ref=f2e90]
+        - button "Additional navigation options" [ref=f2e94] [cursor=pointer]
+    - generic [ref=f2e96]:
+      - 'heading "Actions: wangyh775/wangyh775.github.io" [level=1] [ref=f2e97]'
+      - generic [ref=f2e100]:
+        - generic [ref=f2e101]:
+          - heading "Actions" [level=2] [ref=f2e103]
+          - navigation "Actions Workflows" [ref=f2e107]:
+            - list [ref=f2e109]:
+              - listitem [ref=f2e110]:
+                - link "All workflows" [ref=f2e111] [cursor=pointer]:
+                  - /url: /wangyh775/wangyh775.github.io/actions
+              - listitem [ref=f2e113]
+              - listitem [ref=f2e114]:
+                - list "Workflows" [ref=f2e118]:
+                  - listitem [ref=f2e119]:
+                    - link "Deploy to GitHub Pages" [ref=f2e120] [cursor=pointer]:
+                      - /url: /wangyh775/wangyh775.github.io/actions/workflows/deploy.yml
+                  - listitem [ref=f2e122]:
+                    - link "pages-build-deployment" [ref=f2e123] [cursor=pointer]:
+                      - /url: /wangyh775/wangyh775.github.io/actions/workflows/pages/pages-build-deployment
+              - listitem [ref=f2e125]
+              - listitem [ref=f2e126]:
+                - generic [ref=f2e129]:
+                  - heading "Management" [level=3] [ref=f2e131]
+                  - list "Management" [ref=f2e132]:
+                    - listitem [ref=f2e133]:
+                      - link "Caches" [ref=f2e134] [cursor=pointer]:
+                        - /url: /wangyh775/wangyh775.github.io/actions/caches
+                    - listitem [ref=f2e136]:
+                      - link "Deployments" [ref=f2e137] [cursor=pointer]:
+                        - /url: /wangyh775/wangyh775.github.io/deployments
+        - generic [ref=f2e141]:
+          - generic [ref=f2e142]:
+            - generic [ref=f2e143]:
+              - heading "All workflows" [level=2] [ref=f2e145]
+              - search [ref=f2e151]:
+                - combobox "Filter workflow runs" [ref=f2e152]
+            - generic [ref=f2e153]: Showing runs from all workflows
+          - strong [ref=f2e156]: 4 workflow runs
+          - generic [ref=f2e157]:
+            - generic [ref=f2e159]:
+              - button "Workflow" [ref=f2e163] [cursor=pointer]
+              - button "Event" [ref=f2e169] [cursor=pointer]
+              - button "Status" [ref=f2e175] [cursor=pointer]
+              - button "Branch" [ref=f2e181] [cursor=pointer]
+              - button "Actor" [ref=f2e187] [cursor=pointer]
+            - generic [ref=f2e190]:
+              - generic [ref=f2e192]:
+                - generic [ref=f2e193]:
+                  - 'link "failed: Run 3 of Deploy to GitHub Pages. fix: add packageManager field for pnpm version detection" [ref=f2e194] [cursor=pointer]':
+                    - /url: /wangyh775/wangyh775.github.io/actions/runs/30616727542
+                    - img "failed:" [ref=f2e196]
+                    - generic [ref=f2e198]: "fix: add packageManager field for pnpm version detection"
+                  - generic [ref=f2e199]:
+                    - text: "Deploy to GitHub Pages #3:"
+                    - generic [ref=f2e200]:
+                      - text: Commit
+                      - link "2505be8" [ref=f2e201] [cursor=pointer]:
+                        - /url: /wangyh775/wangyh775.github.io/commit/2505be8aae2803d1fe86cf85b5f623bd90d66469
+                      - text: pushed by
+                      - link "wangyh775" [ref=f2e202] [cursor=pointer]:
+                        - /url: /wangyh775
+                - link "main" [ref=f2e204] [cursor=pointer]:
+                  - /url: /wangyh775/wangyh775.github.io/tree/refs/heads/main
+                - generic [ref=f2e206]:
+                  - generic [ref=f2e207]:
+                    - generic "Jul 31, 2026, 16:33 GMT+8" [ref=f2e212]: 24 minutes ago
+                    - generic [ref=f2e213]:
+                      - img "Run duration" [ref=f2e214]
+                      - text: 25s
+                  - group [ref=f2e217]:
+                    - img "Show options" [ref=f2e219] [cursor=pointer]
+              - generic [ref=f2e222]:
+                - generic [ref=f2e223]:
+                  - 'link "failed: Run 2 of Deploy to GitHub Pages. Create deploy.yml" [ref=f2e224] [cursor=pointer]':
+                    - /url: /wangyh775/wangyh775.github.io/actions/runs/30616273909
+                    - img "failed:" [ref=f2e226]
+                    - generic [ref=f2e228]: Create deploy.yml
+                  - generic [ref=f2e229]:
+                    - text: "Deploy to GitHub Pages #2:"
+                    - generic [ref=f2e230]:
+                      - text: Commit
+                      - link "e720029" [ref=f2e231] [cursor=pointer]:
+                        - /url: /wangyh775/wangyh775.github.io/commit/e720029a6232f2d294eb7ca128903c9a7d5bfc02
+                      - text: pushed by
+                      - link "wangyh775" [ref=f2e232] [cursor=pointer]:
+                        - /url: /wangyh775
+                - link "main" [ref=f2e234] [cursor=pointer]:
+                  - /url: /wangyh775/wangyh775.github.io/tree/refs/heads/main
+                - generic [ref=f2e236]:
+                  - generic [ref=f2e237]:
+                    - generic "Jul 31, 2026, 16:25 GMT+8" [ref=f2e242]: 31 minutes ago
+                    - generic [ref=f2e243]:
+                      - img "Run duration" [ref=f2e244]
+                      - text: 10s
+                  - group [ref=f2e247]:
+                    - img "Show options" [ref=f2e249] [cursor=pointer]
+              - generic [ref=f2e252]:
+                - generic [ref=f2e253]:
+                  - 'link "completed successfully: Run 1 of Deploy to GitHub Pages. Create deploy.yml" [ref=f2e254] [cursor=pointer]':
+                    - /url: /wangyh775/wangyh775.github.io/actions/runs/30610282278
+                    - img "completed successfully:" [ref=f2e256]
+                    - generic [ref=f2e258]: Create deploy.yml
+                  - generic [ref=f2e259]:
+                    - text: "Deploy to GitHub Pages #1:"
+                    - generic [ref=f2e260]:
+                      - text: Commit
+                      - link "9745e51" [ref=f2e261] [cursor=pointer]:
+                        - /url: /wangyh775/wangyh775.github.io/commit/9745e51f5284b2ad9718e6eb6838782ec87664ff
+                      - text: pushed by
+                      - link "wangyh775" [ref=f2e262] [cursor=pointer]:
+                        - /url: /wangyh775
+                - link "main" [ref=f2e264] [cursor=pointer]:
+                  - /url: /wangyh775/wangyh775.github.io/tree/refs/heads/main
+                - generic [ref=f2e266]:
+                  - generic [ref=f2e267]:
+                    - generic "Jul 31, 2026, 14:39 GMT+8" [ref=f2e272]: Today at 14:39
+                    - generic [ref=f2e273]:
+                      - img "Run duration" [ref=f2e274]
+                      - text: 48s
+                  - group [ref=f2e277]:
+                    - img "Show options" [ref=f2e279] [cursor=pointer]
+              - generic [ref=f2e282]:
+                - generic [ref=f2e283]:
+                  - 'link "failed: Run 1 of pages-build-deployment. pages build and deployment" [ref=f2e284] [cursor=pointer]':
+                    - /url: /wangyh775/wangyh775.github.io/actions/runs/30608154373
+                    - img "failed:" [ref=f2e286]
+                    - generic [ref=f2e288]: pages build and deployment
+                  - generic [ref=f2e289]:
+                    - text: "pages-build-deployment #1:"
+                    - generic [ref=f2e290]:
+                      - text: by
+                      - link "wangyh775" [ref=f2e291] [cursor=pointer]:
+                        - /url: /wangyh775
+                - link "main" [ref=f2e293] [cursor=pointer]:
+                  - /url: /wangyh775/wangyh775.github.io/tree/refs/heads/main
+                - generic [ref=f2e296]:
+                  - generic "Jul 31, 2026, 13:55 GMT+8" [ref=f2e301]: Today at 13:55
+                  - generic [ref=f2e302]:
+                    - img "Run duration" [ref=f2e303]
+                    - text: 32s
