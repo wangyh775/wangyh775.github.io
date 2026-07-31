@@ -5,64 +5,59 @@ import { getCollection } from "astro:content";
 import createSlug from "../lib/createSlug"
 
 const posts = (await getCollection("blog")).sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
-
 const last_posts = posts.slice(0, 3);
 ---
 
 <BaseLayout sideBarActiveItemID="home">
-  <div class="pb-12 mt-5">
-    <div class="text-xl py-1">Hey there 👋</div>
-    <div class="text-5xl font-bold">I'm Manuel Ernesto</div>
-    <div class="text-3xl py-3 font-bold">Software Engineer and Entrepreneur</div>
+  <div class="pb-4 mt-5">
+    <div class="text-5xl font-bold">王云鹤</div>
+    <div class="text-3xl py-3 font-bold">机械工程硕士 · 大连交通大学</div>
     <div class="py-2">
       <text class="text-lg">
-        This is <b>Astrofy</b> a free and open-source template for your Personal Portfolio Website built with Astro and TailwindCSS.
-        Create in minutes a website with Blog, CV, Project Section, Store and RSS Feed. I hope you find
-        it useful!
+        研究方向为嵌入式控制、高温FDM 3D打印及智能制造。
+        面向PEEK等高性能聚合物材料，自主设计搭建500×500×500mm大尺寸高温FDM 3D打印设备，
+        专注于Klipper二次开发、MPC/EKF温控算法与基于AI Agent的智能切片系统。
       </text>
     </div>
     <div class="mt-8">
-      <a class="btn" href="https://twitter.com/manuelernestog" target="_blank"> Let's connect!</a>
-      <a href="https://github.com/manuelernestog/astrofy" target="_blank" class="btn btn-outline ml-5">
-        Get This template
-      </a>
+      <a class="btn" href="https://github.com/877660224" target="_blank"> GitHub</a>
+      <a href="/cv" class="btn btn-outline ml-5">简历</a>
     </div>
   </div>
 
   <div>
-    <div class="text-3xl w-full font-bold mb-2">My last projects {"</>"}</div>
+    <div class="text-3xl w-full font-bold mb-2 mt-10">代表性项目</div>
   </div>
 
   <HorizontalCard
-    title="Demo Project 1"
+    title="大型高温FDM 3D打印设备研发"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="NEW"
+    desc="面向PEEK等高性能材料，自主设计搭建500×500×500mm大尺寸高温FDM 3D打印设备。基于Linux+RK3588与STM32H7构建分布式控制系统，完成整机电气系统设计与Klipper/Moonraker固件二次开发。"
+    url="/projects"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 2"
+    title="FDM挤出机热端MPC温控方法"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
+    desc="针对高速打印中热端温度波动大、PID响应滞后的问题，设计基于模型预测控制（MPC）的热端温控系统，使用EKF实现温度状态估计，部署于嵌入式平台。"
+    url="/projects"
   />
   <div class="divider my-0"></div>
   <HorizontalCard
-    title="Demo Project 3"
+    title="基于AI Agent的智能切片系统"
     img="/post_img.webp"
-    desc="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."
-    url="#"
-    badge="FOSS"
+    desc="对OrcaSlicer进行源码级二次开发，集成基于LangGraph的多智能体系统以重构切片工作流，实现打印工艺参数推荐与实时优化。"
+    url="/projects"
+    badge="进行中"
   />
 
   <div>
-    <div class="text-3xl w-full font-bold mb-5 mt-10">Latest from blog</div>
+    <div class="text-3xl w-full font-bold mb-5 mt-10">最新博客</div>
   </div>
 
   {
     last_posts.map((post) => (
-      <>
+      <div>
         <HorizontalCard
           title={post.data.title}
           img={post.data.heroImage}
@@ -72,7 +67,7 @@ const last_posts = posts.slice(0, 3);
           badge={post.data.badge}
         />
         <div class="divider my-0" />
-      </>
+      </div>
     ))
   }
 </BaseLayout>
