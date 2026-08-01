@@ -51,7 +51,7 @@ const last_posts = posts.slice(0, 3);
         </svg>
         邮箱
       </a>
-      <a class="btn btn-sm btn-ghost" href="/resume.pdf" download>
+      <a class="btn btn-sm btn-outline btn-primary" href="/resume.pdf" download>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
           <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
           <polyline points="7 10 12 15 17 10"/>
@@ -61,50 +61,68 @@ const last_posts = posts.slice(0, 3);
       </a>
     </div>
 
-    <div class="mt-6 stats stats-vertical sm:stats-horizontal shadow bg-base-100">
-      <div class="stat">
-        <div class="stat-title">EI 论文</div>
-        <div class="stat-value text-2xl">1 篇</div>
-        <div class="stat-desc">ERX, IF 1.8, JCR Q2</div>
+    <!-- 核心研发能力与技术闭环矩阵 -->
+    <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <div class="card bg-base-100 shadow-md border border-base-200 hover:shadow-lg transition-shadow">
+        <div class="card-body p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">🛠️</span>
+            <h3 class="card-title text-base font-bold">工业装备全栈研发</h3>
+          </div>
+          <ul class="text-xs text-base-content/80 space-y-1.5 list-disc list-inside">
+            <li>500³mm / 450°C 自研高温设备</li>
+            <li>EPLAN 电气 / 结构工程设计</li>
+            <li>RK3588 + STM32 分布式系统</li>
+          </ul>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-title">发明专利</div>
-        <div class="stat-value text-2xl">1 项</div>
-        <div class="stat-desc">已公开</div>
+
+      <div class="card bg-base-100 shadow-md border border-base-200 hover:shadow-lg transition-shadow">
+        <div class="card-body p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">📐</span>
+            <h3 class="card-title text-base font-bold">嵌入式控制与数值仿真</h3>
+          </div>
+          <ul class="text-xs text-base-content/80 space-y-1.5 list-disc list-inside">
+            <li>NMPC + EKF 闭环温控算法</li>
+            <li>嵌入式实测控温精度 ±1.0°C</li>
+            <li>PEEK 流热耦合 CFD 仿真</li>
+          </ul>
+        </div>
       </div>
-      <div class="stat">
-        <div class="stat-title">自研设备</div>
-        <div class="stat-value text-2xl">500³mm</div>
-        <div class="stat-desc">高温 FDM 3D 打印</div>
-      </div>
-      <div class="stat">
-        <div class="stat-title">开源项目</div>
-        <div class="stat-value text-2xl">2 个</div>
-        <div class="stat-desc">JHTracker, Agent-Native</div>
+
+      <div class="card bg-base-100 shadow-md border border-base-200 hover:shadow-lg transition-shadow">
+        <div class="card-body p-5">
+          <div class="flex items-center gap-2 mb-2">
+            <span class="text-2xl">🤖</span>
+            <h3 class="card-title text-base font-bold">工业软件与 AI Agent</h3>
+          </div>
+          <ul class="text-xs text-base-content/80 space-y-1.5 list-disc list-inside">
+            <li>OrcaSlicer 源码级二次开发</li>
+            <li>LangGraph 多智能体切片流</li>
+            <li>36 个 Agent-Native MCP 工具</li>
+          </ul>
+        </div>
       </div>
     </div>
   </div>
-
-  <div>
-    <div class="text-3xl w-full font-bold mb-2 mt-10">开源 / 工程实践</div>
-  </div>
-
-  <HorizontalCard
-    title="JHTracker — AI 驱动的求职全流程管理"
-    img="/fig-project-jhtracker.svg"
-    desc="Flask + SQLAlchemy + MCP 构建的 Agent-Native 求职管理工具，36 个 MCP 工具覆盖 11 个数据域，实现 HITL 人机协同决策闭环与 Agent Trace 实时轨迹可视化。OpenSpec 驱动开发，含完整测试与迁移。"
-    url="https://github.com/wangyh775/JHTracker"
-    badge="开源"
-    tags={["Flask", "MCP", "AI Agent", "HITL", "SQLite"]}
-  />
 
   <div>
     <div class="text-3xl w-full font-bold mb-2 mt-10">代表性项目</div>
   </div>
 
   <HorizontalCard
+    title="JHTracker — AI 驱动的求职全流程管理"
+    img="/fig-project-jhtracker.svg"
+    desc="Flask + SQLAlchemy + MCP 构建的 Agent-Native 求职管理工具，36 个 MCP 工具覆盖 11 个数据域，实现 HITL 人机协同决策闭环与 Agent Trace 实时轨迹可视化。OpenSpec 驱动开发，含完整测试与迁移。"
+    url="/projects/jhtracker"
+    badge="开源"
+    tags={["Flask", "MCP", "AI Agent", "HITL", "SQLite"]}
+  />
+  <div class="divider my-0"></div>
+  <HorizontalCard
     title="大型高温FDM 3D打印设备研发"
-    img="/fig-architecture-gemini.jpg"
+    img="/fig-hardware-topology.gif"
     desc="面向PEEK等高性能材料，自主设计搭建500×500×500mm大尺寸高温FDM 3D打印设备。基于Linux+RK3588与STM32H7构建分布式控制系统，完成整机电气系统设计与Klipper/Moonraker固件二次开发。"
     url="/projects/fdm-hardware"
     tags={["STM32H7", "Klipper", "Linux", "RK3588"]}
