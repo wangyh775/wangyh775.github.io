@@ -1,0 +1,183 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout title="联系" sideBarActiveItemID="contact">
+  <div class="max-w-2xl mx-auto py-4">
+    <div class="mb-6">
+      <div class="text-3xl font-bold">📬 联系我</div>
+      <p class="text-base-content/70 mt-2">
+        欢迎交流！无论关于学术研究、工程项目合作还是技术讨论，都欢迎随时联系。
+      </p>
+    </div>
+
+    <!-- 联系方式卡片 -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+      <div class="card bg-base-100 shadow-lg">
+        <div class="card-body">
+          <h3 class="card-title">📧 电子邮箱</h3>
+          <div class="flex items-center gap-2 mt-2">
+            <code class="text-lg font-mono" id="email-address">877660224@qq.com</code>
+            <button
+              class="btn btn-sm btn-ghost"
+              id="copy-email-btn"
+              onclick="copyEmail()"
+            >
+              📋 复制
+            </button>
+          </div>
+          <p class="text-sm text-base-content/60 mt-2">复制邮箱地址，通过你的邮箱发送邮件给我</p>
+        </div>
+      </div>
+
+      <div class="card bg-base-100 shadow-lg">
+        <div class="card-body">
+          <h3 class="card-title">🌐 社交与平台</h3>
+          <div class="flex flex-col gap-2 mt-2">
+            <a
+              href="https://github.com/wangyh775"
+              target="_blank"
+              rel="noopener"
+              class="link link-hover flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+              </svg>
+              GitHub: wangyh775
+            </a>
+            <a
+              href="https://blog.csdn.net/m0_58988991"
+              target="_blank"
+              rel="noopener"
+              class="link link-hover flex items-center gap-2"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                <polyline points="14 2 14 8 20 8"/>
+                <line x1="8" y1="13" x2="16" y2="13"/>
+                <line x1="8" y1="17" x2="16" y2="17"/>
+              </svg>
+              CSDN: m0_58988991
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 在线留言表单 -->
+    <div class="card bg-base-100 shadow-lg">
+      <div class="card-body">
+        <h3 class="card-title text-xl mb-2">✉️ 在线留言</h3>
+        <p class="text-sm text-base-content/60 mb-4">
+          填写以下表单，留言将直接发送到我的 QQ 邮箱。
+        </p>
+
+        <form
+          id="contact-form"
+          action="https://api.web3forms.com/submit"
+          method="POST"
+          class="space-y-4"
+        >
+          <input type="hidden" name="access_key" value="7521d9f2-8a3f-4de1-882d-712ca8b82969" />
+          <input type="hidden" name="from_name" value="王云鹤个人主页" />
+          <input type="hidden" name="subject" value="📬 收到来自个人主页的新留言" />
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">您的姓名 / 称呼</span>
+            </label>
+            <input
+              type="text"
+              name="name"
+              placeholder="如：张三"
+              class="input input-bordered w-full"
+              required
+            />
+          </div>
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">您的邮箱地址</span>
+            </label>
+            <input
+              type="email"
+              name="email"
+              placeholder="如：zhangsan@example.com"
+              class="input input-bordered w-full"
+              required
+            />
+          </div>
+
+          <div class="form-control">
+            <label class="label">
+              <span class="label-text">留言内容</span>
+            </label>
+            <textarea
+              name="message"
+              placeholder="请输入您想说的话..."
+              class="textarea textarea-bordered h-32"
+              required
+            ></textarea>
+          </div>
+
+          <button type="submit" class="btn btn-primary w-full">
+            发送留言
+          </button>
+
+          <p class="text-xs text-base-content/50 text-center" id="form-status"></p>
+        </form>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
+
+<script>
+  // 复制邮箱功能
+  function copyEmail() {
+    const email = "877660224@qq.com";
+    navigator.clipboard.writeText(email).then(() => {
+      const btn = document.getElementById("copy-email-btn");
+      const original = btn.innerHTML;
+      btn.innerHTML = "✅ 已复制";
+      setTimeout(() => {
+        btn.innerHTML = original;
+      }, 2000);
+    });
+  }
+
+  // 表单提交成功提示（不跳转页面）
+  const form = document.getElementById("contact-form");
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const status = document.getElementById("form-status");
+      status.textContent = "发送中...";
+      status.className = "text-xs text-base-content/50 text-center";
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+      const json = JSON.stringify(data);
+
+      try {
+        const res = await fetch("https://api.web3forms.com/submit", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: json,
+        });
+        const result = await res.json();
+
+        if (result.success) {
+          status.textContent = "✅ 留言已发送成功，我会尽快回复您！";
+          status.className = "text-xs text-success text-center font-medium";
+          form.reset();
+        } else {
+          status.textContent = "❌ 发送失败，请稍后重试或直接发送邮件";
+          status.className = "text-xs text-error text-center";
+        }
+      } catch {
+        status.textContent = "❌ 网络错误，请稍后重试或直接发送邮件";
+        status.className = "text-xs text-error text-center";
+      }
+    });
+  }
+</script>
