@@ -34,17 +34,33 @@ import { Image } from "astro:assets";
     <div class="divider"></div>
 
     <div class="mb-8">
-      <h2 class="text-2xl font-bold mb-3">设备实物</h2>
-      <div class="card bg-base-100 shadow-lg">
-        <div class="card-body">
-          <Image
-            src="/fig-device.jpg"
-            alt="大型高温FDM 3D打印设备"
-            width={800}
-            height={600}
-            format="webp"
-            class="rounded-lg w-full"
-          />
+      <h2 class="text-2xl font-bold mb-3">设备实物与系统架构</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-base">设备实物</h3>
+            <Image
+              src="/fig-device.jpg"
+              alt="大型高温FDM 3D打印设备实物"
+              width={400}
+              height={300}
+              format="webp"
+              class="rounded-lg w-full object-contain"
+            />
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-base">整机系统架构示意</h3>
+            <Image
+              src="/fig-architecture-gemini.jpg"
+              alt="系统总体架构图"
+              width={400}
+              height={300}
+              format="webp"
+              class="rounded-lg w-full object-contain"
+            />
+          </div>
         </div>
       </div>
     </div>

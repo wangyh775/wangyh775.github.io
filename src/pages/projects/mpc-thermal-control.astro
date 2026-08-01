@@ -72,18 +72,34 @@ import { Image } from "astro:assets";
     <div class="divider"></div>
 
     <div class="mb-8">
-      <h2 class="text-2xl font-bold mb-3">实验结果</h2>
-      <p class="text-base-content/70 mb-3">MPC与PID控制器的温度跟踪对比实验</p>
-      <div class="card bg-base-100 shadow-lg">
-        <div class="card-body">
-          <Image
-            src="/fig-temp-comparison.png"
-            alt="MPC与PID温控对比实验结果"
-            width={800}
-            height={450}
-            format="webp"
-            class="rounded-lg w-full"
-          />
+      <h2 class="text-2xl font-bold mb-3">热端结构与实验结果</h2>
+      <p class="text-base-content/70 mb-3">三节点热模型结构示意图与 MPC/PID 控制器温度跟踪对比</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-base">热端三节点结构示意</h3>
+            <Image
+              src="/fig-hotend-schematic.png"
+              alt="热端三节点结构示意图"
+              width={400}
+              height={300}
+              format="webp"
+              class="rounded-lg w-full object-contain"
+            />
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title text-base">温控实验对比</h3>
+            <Image
+              src="/fig-temp-comparison.png"
+              alt="MPC与PID温控对比实验结果"
+              width={400}
+              height={300}
+              format="webp"
+              class="rounded-lg w-full object-contain"
+            />
+          </div>
         </div>
       </div>
       <p class="text-base-content/70 mt-3 text-sm">

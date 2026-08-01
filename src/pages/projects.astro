@@ -10,7 +10,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
     title="大型高温FDM 3D打印设备研发"
-    img="/fig-fdm-advantages.png"
+    img="/fig-architecture-gemini.jpg"
     desc="面向PEEK等高性能材料打印需求，自主设计搭建500×500×500mm大尺寸高温FDM 3D打印设备。基于Linux+RK3588与STM32H7构建分布式控制系统，实现多轴运动、温度闭环及挤出控制。使用EPLAN、嘉立创ECAD完成整机电气系统设计；二次开发Klipper/Moonraker打印控制系统。"
     url="/projects/fdm-hardware"
     target="_self"
@@ -21,7 +21,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
     title="FDM挤出机热端MPC温控方法"
-    img="/fig-temp-comparison.png"
+    img="/fig-hotend-schematic.png"
     desc="针对高速打印中热端温度波动大、PID响应滞后的问题，设计基于模型预测控制（MPC）的热端温控系统，使用EKF实现温度状态估计，部署于嵌入式平台，实现加热功率实时优化控制。已发表EI论文（ERX，IF 1.8，JCR Q2）。"
     url="/projects/mpc-thermal-control"
     target="_self"
@@ -32,7 +32,7 @@ import HorizontalCard from "../components/HorizontalCard.astro";
 
   <HorizontalCard
     title="基于AI Agent的智能切片系统"
-    img="/post_img.webp"
+    img="/fig-software-diagram.png"
     desc="基于OrcaSlicer集成LangGraph多智能体系统，重构切片工作流，实现打印工艺参数推荐与工艺参数实时优化。"
     url="/projects/ai-agent-slicer"
     target="_self"

@@ -40,6 +40,19 @@ import { Image } from "astro:assets";
       <div class="card bg-base-100 shadow-lg">
         <div class="card-body">
           <h3 class="card-title mb-3">LLM Agent 架构</h3>
+          <Image
+            src="/fig-software-diagram.png"
+            alt="软件与切片控制系统架构图"
+            width={800}
+            height={450}
+            format="webp"
+            class="rounded-lg w-full"
+          />
+        </div>
+      </div>
+      <div class="card bg-base-100 shadow-lg mt-4">
+        <div class="card-body">
+          <h3 class="card-title mb-3">Agent 流程链路</h3>
           <div class="space-y-2 font-mono text-sm">
             <div class="flex items-center gap-2">
               <span class="text-primary">▶</span>
