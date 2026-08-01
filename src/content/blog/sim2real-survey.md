@@ -2,7 +2,7 @@
 title: "【系统综述】Sim2Real 在机器人与控制系统中的应用、方法与核心挑战"
 description: "系统梳理仿真到现实（Sim2Real）迁移技术，涵盖域随机化、域自适应、仿真引擎对比（MuJoCo/Isaac Gym）及现实差距弥合策略。"
 pubDate: "2024-12-30"
-heroImage: "/fig-control-framework.png"
+heroImage: "/fig-sim2real.svg"
 badge: "强化学习"
 tags: ["Sim2Real", "机器人控制", "强化学习", "域随机化"]
 ---

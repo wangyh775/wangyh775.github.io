@@ -2,7 +2,7 @@
 title: "Klipper 共振补偿（Input Shaper）实现原理与工作流程详解"
 description: "深入分析 Klipper 如何通过输入整形算法抵消机械共振，提升高速打印质量，并结合 ADXL345 加速度计进行频率整定。"
 pubDate: "2026-07-20"
-heroImage: "/fig-device.jpg"
+heroImage: "/fig-input-shaper.svg"
 badge: "3D打印算法"
 tags: ["Klipper", "Input Shaper", "振纹消除", "加速度计"]
 ---

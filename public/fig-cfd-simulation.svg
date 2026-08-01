@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40"/>
+    </pattern>
+    <rect width="800" height="450" fill="url(#grid)"/>
+  </g>
+  <circle cx="150" cy="100" r="100" fill="#3b82f6" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="650" cy="350" r="120" fill="#8b5cf6" opacity="0.12" filter="url(#glow)"/>
+
+  <text x="40" y="55" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">
+    PEEK 流热耦合仿真 <tspan fill="#38bdf8" font-weight="400">CFD 数值计算流程</tspan>
+  </text>
+  <text x="40" y="80" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">
+    ANSYS Fluent / COMSOL · 非牛顿流体 · Cross-WLI 模型
+  </text>
+
+  <!-- 上排 3 个流程块 -->
+  <g transform="translate(40, 115)">
+    <rect width="220" height="100" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <rect width="220" height="30" rx="10" fill="#1e293b" opacity="0.8"/>
+    <text x="12" y="21" fill="#38bdf8" font-family="sans-serif" font-weight="700" font-size="11">📐 几何建模与网格划分</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">三维热端流道模型</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">非结构化四面体网格</text>
+    <text x="15" y="90" fill="#64748b" font-family="sans-serif" font-size="9">边界层加密处理</text>
+  </g>
+  <g transform="translate(290, 115)">
+    <rect width="220" height="100" rx="10" fill="url(#cardGrad)" stroke="#4338ca" stroke-width="1.5"/>
+    <rect width="220" height="30" rx="10" fill="#1e1b4b" opacity="0.8"/>
+    <text x="12" y="21" fill="#a5b4fc" font-family="sans-serif" font-weight="700" font-size="11">⚙️ 求解器设置</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">Cross-WLI 非牛顿流体</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">流热耦合求解</text>
+    <text x="15" y="90" fill="#64748b" font-family="sans-serif" font-size="9">稳态/瞬态分析</text>
+  </g>
+  <g transform="translate(540, 115)">
+    <rect width="220" height="100" rx="10" fill="url(#cardGrad)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#glow)"/>
+    <rect width="220" height="30" rx="10" fill="#2e1065" opacity="0.8"/>
+    <text x="12" y="21" fill="#c084fc" font-family="sans-serif" font-weight="700" font-size="11">📊 结果后处理</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">温度场 / 流场分析</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">剪切速率分布</text>
+    <text x="15" y="90" fill="#64748b" font-family="sans-serif" font-size="9">压力场与速度分布</text>
+  </g>
+
+  <path d="M 260 165 L 285 165" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 4"/>
+  <path d="M 510 165 L 535 165" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="272" cy="165" r="4" fill="#38bdf8"/>
+  <circle cx="522" cy="165" r="4" fill="#818cf8"/>
+
+  <!-- 下排 2 个结果分析块 -->
+  <g transform="translate(100, 245)">
+    <rect width="260" height="90" rx="10" fill="url(#cardGrad)" stroke="#059669" stroke-width="1.5"/>
+    <rect width="260" height="30" rx="10" fill="#059669" opacity="0.2"/>
+    <text x="12" y="21" fill="#6ee7b7" font-family="sans-serif" font-weight="700" font-size="11">🔬 关键物理量提取</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">入口温度 420°C / 出口压力 15.2MPa</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">滞留区识别 · 最大剪切速率</text>
+  </g>
+  <g transform="translate(440, 245)">
+    <rect width="260" height="90" rx="10" fill="url(#cardGrad)" stroke="#db2777" stroke-width="1.5"/>
+    <rect width="260" height="30" rx="10" fill="#db2777" opacity="0.2"/>
+    <text x="12" y="21" fill="#fbcfe8" font-family="sans-serif" font-weight="700" font-size="11">✅ 实验验证与优化</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">挤出推力测试误差 &lt; 2%</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">响应面法优化 · 压降降低 22%</text>
+  </g>
+
+  <path d="M 230 245 L 230 235 L 100 235" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+  <path d="M 570 245 L 570 235 L 440 235" stroke="#38bdf8" stroke-width="1.5" stroke-dasharray="3 3" fill="none"/>
+
+  <!-- 底部技术栈 -->
+  <g transform="translate(40, 375)">
+    <rect width="720" height="40" rx="8" fill="#1e293b" stroke="#334155" opacity="0.7"/>
+    <text x="20" y="25" fill="#38bdf8" font-family="sans-serif" font-weight="600" font-size="11">Key Specs:</text>
+    <rect x="100" y="10" width="85" height="20" rx="4" fill="#0284c7" opacity="0.3"/>
+    <text x="112" y="24" fill="#7dd3fc" font-family="sans-serif" font-size="10">PEEK 450G</text>
+    <rect x="195" y="10" width="85" height="20" rx="4" fill="#7c3aed" opacity="0.3"/>
+    <text x="207" y="24" fill="#c4b5fd" font-family="sans-serif" font-size="10">Cross-WLI</text>
+    <rect x="290" y="10" width="85" height="20" rx="4" fill="#059669" opacity="0.3"/>
+    <text x="302" y="24" fill="#6ee7b7" font-family="sans-serif" font-size="10">流热耦合</text>
+    <rect x="385" y="10" width="85" height="20" rx="4" fill="#db2777" opacity="0.3"/>
+    <text x="397" y="24" fill="#fbcfe8" font-family="sans-serif" font-size="10">响应面优化</text>
+    <rect x="480" y="10" width="85" height="20" rx="4" fill="#0284c7" opacity="0.3"/>
+    <text x="492" y="24" fill="#7dd3fc" font-family="sans-serif" font-size="10">误差 &lt;2%</text>
+  </g>
+</svg>

@@ -2,7 +2,7 @@
 title: "Marlin 与 3D 打印热端模型预测控制（MPC）实现原理分析"
 description: "对比传统 PID 反馈控制，分析基于系统仿真模型的 MPC 模型预测温控方法，解决热端大热惯性与动态扰动补偿问题。"
 pubDate: "2026-07-25"
-heroImage: "/fig-temp-comparison.png"
+heroImage: "/fig-marlin-mpc.svg"
 badge: "控制算法"
 tags: ["MPC", "模型预测控制", "Marlin", "温控"]
 ---

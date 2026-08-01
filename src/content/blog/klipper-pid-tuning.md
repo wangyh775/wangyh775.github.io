@@ -2,7 +2,7 @@
 title: "Klipper PID 自动调参原理与代码实现详解"
 description: "详细介绍 Klipper 中基于继电反馈法（Relay Feedback）的 PID 参数自动整定算法机制，以及代码分析与配置使用指南。"
 pubDate: "2026-07-15"
-heroImage: "/fig-temp-comparison.png"
+heroImage: "/fig-klipper-pid.svg"
 badge: "3D打印控制"
 tags: ["Klipper", "PID", "温控", "嵌入式"]
 ---

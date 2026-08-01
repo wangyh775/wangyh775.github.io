@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40"/>
+    </pattern>
+    <rect width="800" height="450" fill="url(#grid)"/>
+  </g>
+  <circle cx="150" cy="100" r="100" fill="#3b82f6" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="650" cy="350" r="120" fill="#8b5cf6" opacity="0.12" filter="url(#glow)"/>
+
+  <text x="40" y="55" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">
+    Klipper <tspan fill="#38bdf8" font-weight="400">Input Shaper 共振补偿</tspan>
+  </text>
+  <text x="40" y="80" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">
+    ADXL345 加速度计测量 · 整形滤波器 · 振纹消除
+  </text>
+
+  <!-- 第1块：共振测量 -->
+  <g transform="translate(40, 115)">
+    <rect width="220" height="110" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <rect width="220" height="32" rx="10" fill="#1e293b" opacity="0.8"/>
+    <text x="12" y="22" fill="#38bdf8" font-family="sans-serif" font-weight="700" font-size="12">📡 共振频率测量</text>
+    <text x="15" y="52" fill="#e2e8f0" font-family="sans-serif" font-size="10">ADXL345 加速度计</text>
+    <text x="15" y="72" fill="#94a3b8" font-family="sans-serif" font-size="9">SHAPER_CALIBRATE 指令</text>
+    <text x="15" y="92" fill="#64748b" font-family="sans-serif" font-size="9">X/Y 轴共振频率扫描</text>
+  </g>
+  <path d="M 260 170 L 285 170" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="272" cy="170" r="4" fill="#38bdf8"/>
+
+  <!-- 第2块：滤波器选择 -->
+  <g transform="translate(290, 115)">
+    <rect width="220" height="110" rx="10" fill="url(#cardGrad)" stroke="#4338ca" stroke-width="1.5"/>
+    <rect width="220" height="32" rx="10" fill="#1e1b4b" opacity="0.8"/>
+    <text x="12" y="22" fill="#a5b4fc" font-family="sans-serif" font-weight="700" font-size="12">🎛️ 整形滤波器选择</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">ZV / ZVD / EI / 2Hump / 3Hump</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">自动推荐最优滤波器</text>
+    <text x="15" y="90" fill="#64748b" font-family="sans-serif" font-size="9">频率-振动抑制比分析</text>
+  </g>
+  <path d="M 510 170 L 535 170" stroke="#818cf8" stroke-width="2" stroke-dasharray="4 4"/>
+  <circle cx="522" cy="170" r="4" fill="#818cf8"/>
+
+  <!-- 第3块：运动队列补偿 -->
+  <g transform="translate(540, 115)">
+    <rect width="220" height="110" rx="10" fill="url(#cardGrad)" stroke="#8b5cf6" stroke-width="1.5" filter="url(#glow)"/>
+    <rect width="220" height="32" rx="10" fill="#2e1065" opacity="0.8"/>
+    <text x="12" y="22" fill="#c084fc" font-family="sans-serif" font-weight="700" font-size="12">⚡ 运动队列补偿</text>
+    <text x="15" y="52" fill="#e2e8f0" font-family="sans-serif" font-size="10">原始步进指令 → 整形滤波</text>
+    <text x="15" y="72" fill="#94a3b8" font-family="sans-serif" font-size="9">补偿后步进指令输出</text>
+    <text x="15" y="92" fill="#64748b" font-family="sans-serif" font-size="9">实时运动队列处理</text>
+  </g>
+
+  <!-- 效果对比 -->
+  <g transform="translate(40, 260)">
+    <rect width="720" height="70" rx="10" fill="url(#cardGrad)" stroke="#059669" stroke-width="1.5"/>
+    <text x="20" y="25" fill="#6ee7b7" font-family="sans-serif" font-weight="700" font-size="13">✅ 补偿效果</text>
+    <text x="20" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="11">振纹消除 · 打印质量提升 · 高速打印更稳定</text>
+  </g>
+
+  <!-- 底部技术栈 -->
+  <g transform="translate(40, 370)">
+    <rect width="720" height="40" rx="8" fill="#1e293b" stroke="#334155" opacity="0.7"/>
+    <text x="20" y="25" fill="#38bdf8" font-family="sans-serif" font-weight="600" font-size="11">Tech Stack:</text>
+    <rect x="100" y="10" width="75" height="20" rx="4" fill="#0284c7" opacity="0.3"/>
+    <text x="112" y="24" fill="#7dd3fc" font-family="sans-serif" font-size="10">Klipper</text>
+    <rect x="185" y="10" width="85" height="20" rx="4" fill="#7c3aed" opacity="0.3"/>
+    <text x="197" y="24" fill="#c4b5fd" font-family="sans-serif" font-size="10">ADXL345</text>
+    <rect x="280" y="10" width="85" height="20" rx="4" fill="#059669" opacity="0.3"/>
+    <text x="292" y="24" fill="#6ee7b7" font-family="sans-serif" font-size="10">Input Shaper</text>
+    <rect x="375" y="10" width="60" height="20" rx="4" fill="#db2777" opacity="0.3"/>
+    <text x="387" y="24" fill="#fbcfe8" font-family="sans-serif" font-size="10">振纹消除</text>
+    <rect x="445" y="10" width="85" height="20" rx="4" fill="#0284c7" opacity="0.3"/>
+    <text x="457" y="24" fill="#7dd3fc" font-family="sans-serif" font-size="10">共振补偿</text>
+  </g>
+</svg>

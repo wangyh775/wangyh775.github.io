@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a"/>
+      <stop offset="50%" stop-color="#1e1b4b"/>
+      <stop offset="100%" stop-color="#0f172a"/>
+    </linearGradient>
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1e293b" stop-opacity="0.8"/>
+      <stop offset="100%" stop-color="#0f172a" stop-opacity="0.9"/>
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="5" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+  <rect width="800" height="450" fill="url(#bgGrad)"/>
+  <g opacity="0.05" stroke="#ffffff" stroke-width="1">
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40"/>
+    </pattern>
+    <rect width="800" height="450" fill="url(#grid)"/>
+  </g>
+  <circle cx="150" cy="100" r="100" fill="#3b82f6" opacity="0.12" filter="url(#glow)"/>
+  <circle cx="650" cy="350" r="120" fill="#8b5cf6" opacity="0.12" filter="url(#glow)"/>
+
+  <text x="40" y="55" fill="#f8fafc" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">
+    AI Agent 智能切片系统 <tspan fill="#38bdf8" font-weight="400">多智能体协作架构</tspan>
+  </text>
+  <text x="40" y="80" fill="#94a3b8" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif" font-size="12">
+    LangGraph Multi-Agent · OrcaSlicer 二次开发 · 智能切片工作流
+  </text>
+
+  <!-- 顶层：OrcaSlicer 输入层 -->
+  <g transform="translate(250, 110)">
+    <rect width="300" height="45" rx="10" fill="url(#cardGrad)" stroke="#334155" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#e2e8f0" font-family="sans-serif" font-weight="700" font-size="13">🔧 OrcaSlicer 切片引擎</text>
+    <text x="180" y="28" fill="#94a3b8" font-family="sans-serif" font-size="10">C++ 源码级二次开发</text>
+  </g>
+  <path d="M 400 155 L 400 175" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <!-- 中间层：3 个 Agent 并行 -->
+  <g transform="translate(60, 180)">
+    <rect width="200" height="110" rx="10" fill="url(#cardGrad)" stroke="#0284c7" stroke-width="1.5"/>
+    <rect width="200" height="30" rx="10" fill="#0284c7" opacity="0.2"/>
+    <text x="12" y="21" fill="#38bdf8" font-family="sans-serif" font-weight="700" font-size="11">🤖 参数推荐 Agent</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">工艺参数智能推荐</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">材料-模型匹配分析</text>
+    <text x="15" y="90" fill="#94a3b8" font-family="sans-serif" font-size="9">历史数据学习优化</text>
+  </g>
+  <g transform="translate(300, 180)">
+    <rect width="200" height="110" rx="10" fill="url(#cardGrad)" stroke="#7c3aed" stroke-width="1.5" filter="url(#glow)"/>
+    <rect width="200" height="30" rx="10" fill="#7c3aed" opacity="0.2"/>
+    <text x="12" y="21" fill="#c084fc" font-family="sans-serif" font-weight="700" font-size="11">📊 实时监控 Agent</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">Moonraker API 通信</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">打印状态实时采集</text>
+    <text x="15" y="90" fill="#94a3b8" font-family="sans-serif" font-size="9">异常检测与报警</text>
+  </g>
+  <g transform="translate(540, 180)">
+    <rect width="200" height="110" rx="10" fill="url(#cardGrad)" stroke="#059669" stroke-width="1.5"/>
+    <rect width="200" height="30" rx="10" fill="#059669" opacity="0.2"/>
+    <text x="12" y="21" fill="#6ee7b7" font-family="sans-serif" font-weight="700" font-size="11">🔄 自适应优化 Agent</text>
+    <text x="15" y="50" fill="#e2e8f0" font-family="sans-serif" font-size="10">动态参数调整</text>
+    <text x="15" y="70" fill="#94a3b8" font-family="sans-serif" font-size="9">速度/温度实时优化</text>
+    <text x="15" y="90" fill="#94a3b8" font-family="sans-serif" font-size="9">打印质量反馈闭环</text>
+  </g>
+
+  <path d="M 400 290 L 400 310" stroke="#38bdf8" stroke-width="2" stroke-dasharray="4 4"/>
+
+  <!-- 底层：LangGraph 编排层 -->
+  <g transform="translate(200, 315)">
+    <rect width="400" height="45" rx="10" fill="url(#cardGrad)" stroke="#8b5cf6" stroke-width="1.5"/>
+    <text x="20" y="28" fill="#c084fc" font-family="sans-serif" font-weight="700" font-size="13">🧠 LangGraph 多智能体编排引擎</text>
+    <text x="230" y="28" fill="#94a3b8" font-family="sans-serif" font-size="10">Agent 间通信与协同决策</text>
+  </g>
+
+  <!-- 底部技术栈 -->
+  <g transform="translate(40, 390)">
+    <rect width="720" height="40" rx="8" fill="#1e293b" stroke="#334155" opacity="0.7"/>
+    <text x="20" y="25" fill="#38bdf8" font-family="sans-serif" font-weight="600" font-size="11">Tech Stack:</text>
+    <rect x="100" y="10" width="75" height="20" rx="4" fill="#0284c7" opacity="0.3"/>
+    <text x="112" y="24" fill="#7dd3fc" font-family="sans-serif" font-size="10">LangGraph</text>
+    <rect x="185" y="10" width="80" height="20" rx="4" fill="#7c3aed" opacity="0.3"/>
+    <text x="197" y="24" fill="#c4b5fd" font-family="sans-serif" font-size="10">OrcaSlicer</text>
+    <rect x="275" y="10" width="75" height="20" rx="4" fill="#059669" opacity="0.3"/>
+    <text x="287" y="24" fill="#6ee7b7" font-family="sans-serif" font-size="10">Moonraker</text>
+    <rect x="360" y="10" width="60" height="20" rx="4" fill="#db2777" opacity="0.3"/>
+    <text x="372" y="24" fill="#fbcfe8" font-family="sans-serif" font-size="10">Python</text>
+    <rect x="430" y="10" width="85" height="20" rx="4" fill="#0284c7" opacity="0.3"/>
+    <text x="442" y="24" fill="#7dd3fc" font-family="sans-serif" font-size="10">AI Agent</text>
+  </g>
+</svg>
