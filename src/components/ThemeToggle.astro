@@ -34,53 +34,61 @@
 </div>
 
 <script>
-  const themeToggleBtn = document.getElementById("theme-toggle");
-  const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
-  const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
+  function initThemeToggle() {
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const themeToggleLightIcon = document.getElementById("theme-toggle-light-icon");
+    const themeToggleDarkIcon = document.getElementById("theme-toggle-dark-icon");
 
-  // DaisyUI 主题列表：浅色主题和深色主题
-  const lightThemes = ["light", "cupcake", "bumblebee", "emerald", "corporate", "retro", "cyberpunk", "valentine", "garden", "lofi", "pastel", "fantasy", "wireframe", "cmyk", "autumn", "acid", "lemonade", "winter"];
-  const darkThemes = ["dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim"];
+    // DaisyUI 主题列表：浅色主题和深色主题
+    const lightThemes = ["light", "cupcake", "bumblebee", "emerald", "corporate", "retro", "cyberpunk", "valentine", "garden", "lofi", "pastel", "fantasy", "wireframe", "cmyk", "autumn", "acid", "lemonade", "winter"];
+    const darkThemes = ["dark", "synthwave", "halloween", "forest", "aqua", "black", "luxury", "dracula", "business", "night", "coffee", "dim"];
 
-  // 默认主题
-  const defaultLightTheme = "lofi";
-  const defaultDarkTheme = "dark";
+    // 默认主题
+    const defaultLightTheme = "lofi";
+    const defaultDarkTheme = "dark";
 
-  // 获取当前主题
-  function getCurrentTheme() {
-    return localStorage.getItem("theme") || defaultLightTheme;
-  }
-
-  // 判断是否为深色主题
-  function isDarkTheme(theme) {
-    return darkThemes.includes(theme);
-  }
-
-  // 更新图标显示
-  function updateIcon(theme) {
-    if (isDarkTheme(theme)) {
-      themeToggleLightIcon?.classList.remove("hidden");
-      themeToggleDarkIcon?.classList.add("hidden");
-    } else {
-      themeToggleLightIcon?.classList.add("hidden");
-      themeToggleDarkIcon?.classList.remove("hidden");
+    // 获取当前主题
+    function getCurrentTheme() {
+      return localStorage.getItem("theme") || defaultLightTheme;
     }
-  }
 
-  // 切换主题
-  function toggleTheme() {
+    // 判断是否为深色主题
+    function isDarkTheme(theme) {
+      return darkThemes.includes(theme);
+    }
+
+    // 更新图标显示
+    function updateIcon(theme) {
+      if (isDarkTheme(theme)) {
+        themeToggleLightIcon?.classList.remove("hidden");
+        themeToggleDarkIcon?.classList.add("hidden");
+      } else {
+        themeToggleLightIcon?.classList.add("hidden");
+        themeToggleDarkIcon?.classList.remove("hidden");
+      }
+    }
+
+    // 切换主题
+    function toggleTheme() {
+      const currentTheme = getCurrentTheme();
+      const newTheme = isDarkTheme(currentTheme) ? defaultLightTheme : defaultDarkTheme;
+      
+      document.documentElement.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      updateIcon(newTheme);
+    }
+
+    // 初始化
     const currentTheme = getCurrentTheme();
-    const newTheme = isDarkTheme(currentTheme) ? defaultLightTheme : defaultDarkTheme;
-    
-    document.documentElement.setAttribute("data-theme", newTheme);
-    localStorage.setItem("theme", newTheme);
-    updateIcon(newTheme);
+    updateIcon(currentTheme);
+
+    // 绑定点击事件
+    themeToggleBtn?.addEventListener("click", toggleTheme);
   }
 
-  // 初始化
-  const currentTheme = getCurrentTheme();
-  updateIcon(currentTheme);
+  // 初始页面加载
+  initThemeToggle();
 
-  // 绑定点击事件
-  themeToggleBtn?.addEventListener("click", toggleTheme);
+  // ViewTransitions 兼容：页面切换后重新初始化
+  document.addEventListener("astro:after-swap", initThemeToggle);
 </script>

@@ -2,7 +2,7 @@
 title: "OrcaSlicer 添加自定义 3D 打印机预设与耗材参数指南"
 description: "详细记录在开源切片软件 OrcaSlicer 中配置自定义大尺寸高温 FDM 打印机机型、打印头几何参数与 PEEK 等材料预设的过程。"
 pubDate: "2026-07-28"
-heroImage: "/blog_img/orcaslicer-custom-config-img-1.png"
+heroImage: "/fig-orca-config-flow.svg"
 badge: "切片软件"
 tags: ["OrcaSlicer", "3D打印", "切片预设", "PEEK"]
 ---
