@@ -5,6 +5,7 @@ import { Image } from "astro:assets";
 
 <BaseLayout title="高温FDM设备" sideBarActiveItemID="projects">
   <div class="max-w-3xl mx-auto">
+    <!-- 顶部返回按钮 -->
     <div class="mb-4">
       <a
         href="/projects"
@@ -27,6 +28,8 @@ import { Image } from "astro:assets";
         返回项目列表
       </a>
     </div>
+
+    <!-- Header -->
     <div class="mb-4">
       <div class="text-3xl font-bold">大型高温FDM 3D打印设备研发</div>
       <div class="text-lg text-base-content/70 mt-1">
@@ -34,29 +37,49 @@ import { Image } from "astro:assets";
       </div>
       <div class="mt-3 flex flex-wrap gap-2">
         <span class="badge badge-primary">进行中</span>
-        <span class="badge badge-outline">STM32H7</span>
-        <span class="badge badge-outline">Klipper</span>
-        <span class="badge badge-outline">Linux</span>
+        <span class="badge badge-outline">CoreXY</span>
         <span class="badge badge-outline">RK3588</span>
+        <span class="badge badge-outline">STM32H7</span>
+        <span class="badge badge-outline">Klipper二次开发</span>
         <span class="badge badge-outline">EPLAN</span>
       </div>
     </div>
 
     <div class="divider"></div>
 
+    <!-- 项目背景与工程需求 -->
     <div class="mb-8">
-      <h2 class="text-2xl font-bold mb-3">项目概述</h2>
+      <h2 class="text-2xl font-bold mb-3">项目背景与工程需求</h2>
       <p class="text-base-content/80 leading-relaxed">
-        面向PEEK等高性能聚合物材料打印需求，自主设计搭建500×500×500mm大尺寸高温FDM 3D打印设备。
-        基于Linux+RK3588与STM32H7构建分布式控制系统，实现多轴运动、温度闭环及挤出控制。
-        使用EPLAN、嘉立创ECAD完成整机电气系统设计；二次开发Klipper/Moonraker打印控制系统。
+        面向 PEEK（聚醚醚酮）、PEI（聚醚酰亚胺）等高性能热塑性材料的熔融沉积成形，对打印装备的热管理能力、运动稳定性和控制系统集成能力提出了显著高于常规 FFF 设备的要求。
       </p>
+      <p class="text-base-content/80 leading-relaxed mt-2">
+        与 PLA、ABS 等低温材料相比，高性能材料需要更高的喷头温度（450°C+）、更高的热床温度以及更稳定的高温成形环境，同时要求打印系统在长时间高热负载下保持较好的结构刚性、挤出稳定性和闭环调节能力。
+      </p>
+      <div class="mt-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+        <div class="stat bg-base-100 shadow rounded-lg p-3">
+          <div class="stat-title text-xs">喷头最高温度</div>
+          <div class="stat-value text-primary text-2xl">450°C</div>
+          <div class="stat-desc text-xs">满足 PEEK/PEI 熔融要求</div>
+        </div>
+        <div class="stat bg-base-100 shadow rounded-lg p-3">
+          <div class="stat-title text-xs">热床最高温度</div>
+          <div class="stat-value text-primary text-2xl">200°C</div>
+          <div class="stat-desc text-xs">抑制翘曲分层与开裂</div>
+        </div>
+        <div class="stat bg-base-100 shadow rounded-lg p-3">
+          <div class="stat-title text-xs">成形腔恒温</div>
+          <div class="stat-value text-primary text-2xl">200°C</div>
+          <div class="stat-desc text-xs">降低成形区域温度梯度</div>
+        </div>
+      </div>
     </div>
 
     <div class="divider"></div>
 
+    <!-- 设备实物与硬件拓扑 -->
     <div class="mb-8">
-      <h2 class="text-2xl font-bold mb-3">设备实物与系统架构</h2>
+      <h2 class="text-2xl font-bold mb-3">设备实物与硬件系统拓扑</h2>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div class="card bg-base-100 shadow-lg">
           <div class="card-body">
@@ -73,7 +96,7 @@ import { Image } from "astro:assets";
         </div>
         <div class="card bg-base-100 shadow-lg">
           <div class="card-body">
-            <h3 class="card-title text-base">硬件系统拓扑图 (动态)</h3>
+            <h3 class="card-title text-base">硬件系统拓扑图（动态）</h3>
             <img
               src="/fig-hardware-topology.gif"
               alt="硬件系统拓扑图"
@@ -86,48 +109,154 @@ import { Image } from "astro:assets";
 
     <div class="divider"></div>
 
+    <!-- 4 大核心技术子系统 -->
     <div class="mb-8">
-      <h2 class="text-2xl font-bold mb-3">技术参数</h2>
+      <h2 class="text-2xl font-bold mb-3">核心技术子系统</h2>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- 1. 机械与运动学架构 -->
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">🛠️ 机械与运动学架构</h3>
+            <p class="text-sm text-base-content/70 mt-1">
+              采用 CoreXY 运动学结构，与传统的 Cartesian（笛卡尔）和 H-bot 结构相比，CoreXY 将两个固定电机置于机架底部，通过同步带将运动复合传递到打印头，在维持结构刚性的同时显著降低运动部件惯量，提高高速打印时的路径跟踪精度与稳定性。
+            </p>
+            <ul class="text-xs text-base-content/80 mt-2 space-y-1 list-disc list-inside">
+              <li>500×500×500mm 大尺寸成型空间</li>
+              <li>高刚性铝型材框架 + 封闭式高温舱体</li>
+              <li>双 Z 轴同步驱动，提高 Z 轴定位精度</li>
+              <li>运动部件风琴罩热隔离，防止高温辐射</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 2. 热管理与热隔离设计 -->
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">🌡️ 热管理与热隔离设计</h3>
+            <p class="text-sm text-base-content/70 mt-1">
+              采用 Phaetus Dragon Water 水冷热端，配合风冷水冷组合式热端系统，实现 450°C 高温稳定挤出。舱体采用气凝胶绝热材料进行保温，并基于风琴罩对运动部件进行热隔离，确保高温环境下运动系统的可靠运行。
+            </p>
+            <ul class="text-xs text-base-content/80 mt-2 space-y-1 list-disc list-inside">
+              <li>水冷热端 + 风冷散热双重热管理</li>
+              <li>基于气凝胶的机箱绝热与保温设计</li>
+              <li>150°C-200°C 恒温成形腔体</li>
+              <li>分区热场控制，降低温度梯度</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 3. 分布式电气与传感架构 -->
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">⚡ 分布式电气与传感架构</h3>
+            <p class="text-sm text-base-content/70 mt-1">
+              采用 RK3588（Linux 上位机）+ STM32H7（运动控制下位机）的分布式控制架构。上位机负责高层计算、人机交互与 Klipper 固件运行，下位机负责实时运动控制、温度采集与 IO 管理，二者通过 CAN 总线通信。
+            </p>
+            <ul class="text-xs text-base-content/80 mt-2 space-y-1 list-disc list-inside">
+              <li>RK3588：8 核 ARM，负责 Klipper + Moonraker 主控</li>
+              <li>STM32H7：实时运动控制与温度闭环</li>
+              <li>CAN / Modbus / RS485 多总线工业通信</li>
+              <li>24V / 220V 工业级电源划分与安全防护</li>
+              <li>闭环步进电机 + TMC 驱动</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- 4. 固件与系统二次开发 -->
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">💻 固件与系统二次开发</h3>
+            <p class="text-sm text-base-content/70 mt-1">
+              基于 Klipper + Moonraker 开源生态进行深度定制开发（Kalico 分支增强特性），适配高温大尺寸打印的特定需求。包括多通道温度采集固件集成、断电保护、压力提前（Pressure Advance）、共振补偿（Input Shaper）等高级功能。
+            </p>
+            <ul class="text-xs text-base-content/80 mt-2 space-y-1 list-disc list-inside">
+              <li>Klipper 固件深度定制（Kalico 分支）</li>
+              <li>多通道 Modbus RTU 温度采集集成</li>
+              <li>断电保护与打印恢复机制</li>
+              <li>Pressure Advance / Input Shaper 补偿算法</li>
+              <li>网格床面补偿（Mesh Bed Leveling）</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <!-- 详细技术规格表 -->
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">详细技术规格</h2>
       <div class="overflow-x-auto">
         <table class="table table-zebra w-full">
           <thead>
             <tr>
+              <th>类别</th>
               <th>参数</th>
               <th>规格</th>
             </tr>
           </thead>
           <tbody>
             <tr>
+              <td rowspan="3" class="font-medium">打印尺寸与温度</td>
               <td>打印尺寸</td>
               <td>500 × 500 × 500 mm</td>
             </tr>
             <tr>
               <td>最高喷头温度</td>
-              <td>450°C</td>
+              <td>450°C（热端设计目标 500°C）</td>
             </tr>
             <tr>
-              <td>热床温度</td>
-              <td>150°C</td>
+              <td>热床温度 / 腔体温度</td>
+              <td>200°C / 200°C</td>
             </tr>
             <tr>
+              <td rowspan="3" class="font-medium">控制系统</td>
               <td>主控制器</td>
-              <td>RK3588 + Linux</td>
+              <td>RK3588（8 核 ARM Cortex-A76/A55）</td>
             </tr>
             <tr>
               <td>运动控制器</td>
-              <td>STM32H7</td>
+              <td>STM32H7（Cortex-M7）</td>
             </tr>
             <tr>
               <td>固件系统</td>
-              <td>Klipper + Moonraker</td>
+              <td>Klipper + Moonraker（Kalico 分支）</td>
+            </tr>
+            <tr>
+              <td rowspan="3" class="font-medium">运动与驱动</td>
+              <td>运动结构</td>
+              <td>CoreXY</td>
+            </tr>
+            <tr>
+              <td>电机驱动</td>
+              <td>闭环步进电机 + TMC 驱动</td>
             </tr>
             <tr>
               <td>通信协议</td>
-              <td>CAN/Modbus/RS485</td>
+              <td>CAN / Modbus RTU / RS485</td>
             </tr>
             <tr>
+              <td rowspan="3" class="font-medium">加热与传感</td>
               <td>加热系统</td>
-              <td>Phaetus Dragon Water Hotend</td>
+              <td>Phaetus Dragon Water Hotend（水冷）</td>
+            </tr>
+            <tr>
+              <td>温度传感器</td>
+              <td>PT100 / PT1000 铂电阻、热电偶</td>
+            </tr>
+            <tr>
+              <td>挤出力传感</td>
+              <td>共位差分式挤出力传感器</td>
+            </tr>
+            <tr>
+              <td rowspan="2" class="font-medium">电气与设计</td>
+              <td>电气设计</td>
+              <td>EPLAN + 嘉立创 ECAD</td>
+            </tr>
+            <tr>
+              <td>供电系统</td>
+              <td>24V 控制 / 220V 加热 工业级电源划分</td>
             </tr>
           </tbody>
         </table>
@@ -136,106 +265,26 @@ import { Image } from "astro:assets";
 
     <div class="divider"></div>
 
-    <div class="mb-8">
-      <h2 class="text-2xl font-bold mb-3">系统架构</h2>
-      <div class="card bg-base-100 shadow-lg">
-        <div class="card-body">
-          <div class="font-mono text-sm space-y-2">
-            <div class="flex items-center gap-2">
-              <span class="text-primary">RK3588 (Linux)</span>
-              <span class="text-base-content/50">— 主控</span>
-            </div>
-            <div class="flex items-center gap-2 ml-4">
-              <span class="text-secondary">├─</span>
-              <span>Klipper + Moonraker — 打印控制</span>
-            </div>
-            <div class="flex items-center gap-2 ml-4">
-              <span class="text-secondary">├─</span>
-              <span>MPC/EKF — 温控算法</span>
-            </div>
-            <div class="flex items-center gap-2 ml-4">
-              <span class="text-secondary">└─</span>
-              <span>AI Agent — 智能切片</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-primary">STM32H7</span>
-              <span class="text-base-content/50">— 运动控制</span>
-            </div>
-            <div class="flex items-center gap-2 ml-4">
-              <span class="text-secondary">├─</span>
-              <span>多轴运动控制</span>
-            </div>
-            <div class="flex items-center gap-2 ml-4">
-              <span class="text-secondary">├─</span>
-              <span>温度闭环</span>
-            </div>
-            <div class="flex items-center gap-2 ml-4">
-              <span class="text-secondary">├─</span>
-              <span>挤出控制</span>
-            </div>
-            <div class="flex items-center gap-2 ml-4">
-              <span class="text-secondary">└─</span>
-              <span>CAN/Modbus/RS485</span>
-            </div>
-            <div class="flex items-center gap-2">
-              <span class="text-primary">电气系统</span>
-              <span class="text-base-content/50">— EPLAN + 嘉立创ECAD</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
-    <div class="mb-8">
-      <h2 class="text-2xl font-bold mb-3">技术特点</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        <div class="card bg-base-100 shadow">
-          <div class="card-body">
-            <h3 class="card-title text-lg">分布式控制</h3>
-            <p class="text-sm text-base-content/70">
-              RK3588（Linux）负责高层计算与控制策略，STM32H7负责实时运动控制，二者通过CAN总线通信
-            </p>
-          </div>
-        </div>
-        <div class="card bg-base-100 shadow">
-          <div class="card-body">
-            <h3 class="card-title text-lg">Klipper二次开发</h3>
-            <p class="text-sm text-base-content/70">
-              基于Klipper/Moonraker生态进行深度定制开发，适配高温大尺寸打印需求
-            </p>
-          </div>
-        </div>
-        <div class="card bg-base-100 shadow">
-          <div class="card-body">
-            <h3 class="card-title text-lg">专业电气设计</h3>
-            <p class="text-sm text-base-content/70">
-              使用EPLAN和嘉立创ECAD完成整机电气系统设计，确保系统可靠性与安全性
-            </p>
-          </div>
-        </div>
-        <div class="card bg-base-100 shadow">
-          <div class="card-body">
-            <h3 class="card-title text-lg">高性能挤出</h3>
-            <p class="text-sm text-base-content/70">
-              采用Phaetus Dragon Water Hotend，支持450°C高温挤出，适配PEEK等高性能材料
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="divider"></div>
-
+    <!-- 相关资源 -->
     <div class="mb-8">
       <h2 class="text-2xl font-bold mb-3">相关资源</h2>
       <div class="flex flex-wrap gap-2">
-        <a class="btn btn-sm btn-ghost" href="https://github.com/wangyh775/kalico" target="_blank" rel="noopener">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+        <a
+          class="btn btn-sm btn-primary"
+          href="https://github.com/wangyh775/kalico"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+          >
             <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
           </svg>
-          GitHub 仓库
+          Kalico 固件仓库
         </a>
         <a class="btn btn-sm btn-ghost" href="/projects">← 返回项目列表</a>
       </div>

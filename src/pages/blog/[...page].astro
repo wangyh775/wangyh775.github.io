@@ -86,3 +86,26 @@ const { page } = Astro.props;
     }
   </div>
 </BaseLayout>
+
+<script>
+  // 保存滚动位置（离开页面时）
+  window.addEventListener("scroll", () => {
+    sessionStorage.setItem("blog_scroll", window.scrollY);
+  });
+
+  // 页面加载完成后恢复滚动位置
+  document.addEventListener("DOMContentLoaded", () => {
+    const saved = sessionStorage.getItem("blog_scroll");
+    if (saved) {
+      window.scrollTo({ top: parseInt(saved, 10), behavior: "instant" });
+    }
+  });
+
+  // 图片加载完成后再次校准
+  window.addEventListener("load", () => {
+    const saved = sessionStorage.getItem("blog_scroll");
+    if (saved) {
+      window.scrollTo({ top: parseInt(saved, 10), behavior: "instant" });
+    }
+  });
+</script>

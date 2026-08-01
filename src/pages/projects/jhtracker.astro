@@ -1,0 +1,172 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="JHTracker" sideBarActiveItemID="projects">
+  <div class="max-w-3xl mx-auto">
+    <!-- 顶部返回按钮 -->
+    <div class="mb-4">
+      <a
+        href="/projects"
+        onclick="if(history.length > 1) { history.back(); return false; }"
+        class="btn btn-ghost btn-sm gap-2"
+      >
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M19 12H5M12 19l-7-7 7-7"></path>
+        </svg>
+        返回项目列表
+      </a>
+    </div>
+
+    <div class="mb-4">
+      <div class="text-3xl font-bold">JHTracker — AI 驱动的求职全流程管理</div>
+      <div class="text-lg text-base-content/70 mt-1">
+        Agent-Native Job Hunting Pipeline Manager with Model Context Protocol (MCP) &amp; HITL Loop
+      </div>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span class="badge badge-primary">开源项目</span>
+        <span class="badge badge-outline">Agent-Native</span>
+        <span class="badge badge-outline">Flask</span>
+        <span class="badge badge-outline">MCP 36 Tools</span>
+        <span class="badge badge-outline">HITL Loop</span>
+        <span class="badge badge-outline">OpenSpec</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">项目概述</h2>
+      <p class="text-base-content/80 leading-relaxed">
+        JHTracker 是一款基于 <strong>Flask + SQLAlchemy + MCP (Model Context Protocol)</strong> 构建的 Agent-Native 求职全流程管理系统。
+        它打破了传统的静态 Excel 记录方式，将求职过程抽象为包含目标定位、岗位追踪、投递沟通、面试复盘与 Offer 决策的完整自适应工作流。
+      </p>
+      <p class="text-base-content/80 leading-relaxed mt-2">
+        系统提供 <strong>36 个原子级 MCP 工具</strong>（覆盖 11 个核心数据域），支持 AI Agent 自主完成数据检索、关联推导与决策支持，同时保留人机协同（HITL）控制权与全链路轨迹追溯。
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">系统架构</h2>
+      <div class="card bg-base-100 shadow-lg">
+        <div class="card-body">
+          <Image
+            src="/fig-project-jhtracker.svg"
+            alt="JHTracker Agent-Native 系统架构图"
+            width={800}
+            height={450}
+            format="webp"
+            class="rounded-lg w-full"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">三大核心设计哲学</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">🤖 Agent-Native 首选</h3>
+            <p class="text-xs text-base-content/70">
+              数据结构与 API 专为大模型智能体优化。36 个 MCP 工具让 Agent 可以像使用人类双手一样安全精准地操作数据库。
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">🤝 HITL 人机协同闭环</h3>
+            <p class="text-xs text-base-content/70">
+              关键决策（如修改投递状态、签署 Offer、发起重大更新）必须包含人类确认环节，兼具自动化效率与高可靠性。
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">🔒 数据主权与零依赖</h3>
+            <p class="text-xs text-base-content/70">
+              采用本地 SQLite 数据库 + OpenSpec 变更驱动模式，所有求职隐私数据与 Agent 执行 Trace 100% 本地可控。
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">36 个 MCP 工具与 11 个数据域</h2>
+      <div class="overflow-x-auto">
+        <table class="table table-zebra w-full">
+          <thead>
+            <tr>
+              <th>数据域 (Domain)</th>
+              <th>主要功能 / 工具</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>目标定位 (Goals)</td>
+              <td>意向城市、期望薪资、行业通道设定</td>
+            </tr>
+            <tr>
+              <td>公司与岗位 (Companies/Jobs)</td>
+              <td>岗位信息抓取、关联分类、优先级排序</td>
+            </tr>
+            <tr>
+              <td>投递追踪 (Applications)</td>
+              <td>网申/内推状态机转换、推进与淘汰记录</td>
+            </tr>
+            <tr>
+              <td>面试与复盘 (Interviews)</td>
+              <td>面试轮次记录、问题抽离、AI 辅助答辩复盘</td>
+            </tr>
+            <tr>
+              <td>决策矩阵 (Offers)</td>
+              <td>薪资福利对比、总包换算、满意度打分</td>
+            </tr>
+            <tr>
+              <td>Agent Trace (轨迹审计)</td>
+              <td>记录 Agent 调用的每一个 tool_name、参数与执行耗时</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">相关资源</h2>
+      <div class="flex flex-wrap gap-2">
+        <a
+          class="btn btn-sm btn-primary"
+          href="https://github.com/wangyh775/JHTracker"
+          target="_blank"
+          rel="noopener"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+          查看 GitHub 仓库
+        </a>
+        <a class="btn btn-sm btn-ghost" href="/projects">← 返回项目列表</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
