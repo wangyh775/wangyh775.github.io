@@ -1,0 +1,130 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="MPC温控" sideBarActiveItemID="projects">
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-4">
+      <div class="text-3xl font-bold">FDM挤出机热端MPC温控方法</div>
+      <div class="text-lg text-base-content/70 mt-1">
+        Embedded Nonlinear Model Predictive Control with EKF State Estimation for High-temperature FFF Hotends
+      </div>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span class="badge badge-primary">已发表</span>
+        <span class="badge badge-outline">MPC</span>
+        <span class="badge badge-outline">EKF</span>
+        <span class="badge badge-outline">嵌入式</span>
+        <span class="badge badge-outline">Python</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">项目概述</h2>
+      <p class="text-base-content/80 leading-relaxed">
+        针对高速打印中热端温度波动大、PID响应滞后的问题，设计基于模型预测控制（MPC）的热端温控系统。
+        建立三节点热模型，使用扩展卡尔曼滤波（EKF）实现温度状态估计，部署于嵌入式平台，实现加热功率的实时优化控制。
+      </p>
+      <p class="text-base-content/80 leading-relaxed mt-2">
+        相较于传统PID控制，该方法在PEEK等高性能材料的高速挤出过程中，可显著降低温度超调，提升打印质量稳定性。
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">技术架构</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title">控制架构</h3>
+            <p class="text-base-content/70">
+              热网络模型 → EKF状态估计 → 非线性MPC控制器 → 嵌入式部署（RK3588）
+            </p>
+            <div class="flex flex-wrap gap-2 mt-2">
+              <span class="badge badge-ghost">Thermal Network Model</span>
+              <span class="badge badge-ghost">EKF State Estimation</span>
+              <span class="badge badge-ghost">NMPC Controller</span>
+              <span class="badge badge-ghost">Embedded Deployment</span>
+            </div>
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow-lg">
+          <div class="card-body">
+            <h3 class="card-title">关键指标</h3>
+            <div class="stats shadow">
+              <div class="stat p-4">
+                <div class="stat-title">温度精度</div>
+                <div class="stat-value text-2xl">±1°C</div>
+              </div>
+              <div class="stat p-4">
+                <div class="stat-title">最高温度</div>
+                <div class="stat-value text-2xl">450°C+</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">实验结果</h2>
+      <p class="text-base-content/70 mb-3">MPC与PID控制器的温度跟踪对比实验</p>
+      <div class="card bg-base-100 shadow-lg">
+        <div class="card-body">
+          <Image
+            src="/fig-temp-comparison.png"
+            alt="MPC与PID温控对比实验结果"
+            width={800}
+            height={450}
+            format="webp"
+            class="rounded-lg w-full"
+          />
+        </div>
+      </div>
+      <p class="text-base-content/70 mt-3 text-sm">
+        在相同温度设定轨迹下，MPC控制器相比PID表现出更低的超调和更快的稳定时间。
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">成果产出</h2>
+      <div class="space-y-3">
+        <div class="flex items-start gap-3">
+          <span class="badge badge-primary mt-1">论文</span>
+          <p class="text-base-content/80">
+            Wang Yunhe, Wu Li*. <em>Three-Node Thermal Modeling and Embedded Nonlinear Model Predictive Control with State Estimation for a High-Temperature Hotend.</em>
+            Engineering Research Express, 2026.（EI检索，IF 1.8，JCR Q2）
+          </p>
+        </div>
+        <div class="flex items-start gap-3">
+          <span class="badge badge-primary mt-1">专利</span>
+          <p class="text-base-content/80">
+            发明专利：面向高温FFF热端的三节点热模型预测温度控制方法（202611033298.5，已公开）
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">相关资源</h2>
+      <div class="flex flex-wrap gap-2">
+        <a class="btn btn-sm btn-ghost" href="https://github.com/wangyh775" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+          GitHub
+        </a>
+        <a class="btn btn-sm btn-ghost" href="/projects">← 返回项目列表</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

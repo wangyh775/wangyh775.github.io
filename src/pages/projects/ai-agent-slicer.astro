@@ -1,0 +1,186 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="AI Agent切片" sideBarActiveItemID="projects">
+  <div class="max-w-3xl mx-auto">
+    <div class="mb-4">
+      <div class="text-3xl font-bold">基于AI Agent的智能切片系统</div>
+      <div class="text-lg text-base-content/70 mt-1">
+        AI-driven Intelligent Slicing System with Multi-Agent Architecture
+      </div>
+      <div class="mt-3 flex flex-wrap gap-2">
+        <span class="badge badge-primary">进行中</span>
+        <span class="badge badge-outline">LangGraph</span>
+        <span class="badge badge-outline">OrcaSlicer</span>
+        <span class="badge badge-outline">Python</span>
+        <span class="badge badge-outline">AI Agent</span>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">项目概述</h2>
+      <p class="text-base-content/80 leading-relaxed">
+        对OrcaSlicer进行源码级二次开发，集成基于LangGraph的多智能体系统以重构切片工作流，
+        实现打印工艺参数推荐与工艺参数实时优化。
+      </p>
+      <p class="text-base-content/80 leading-relaxed mt-2">
+        该系统通过智能体自主决策，将传统"手工调参"转变为"AI辅助决策"，
+        降低3D打印的技术门槛，提升打印成功率。
+      </p>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">系统架构</h2>
+      <div class="card bg-base-100 shadow-lg">
+        <div class="card-body">
+          <h3 class="card-title mb-3">LLM Agent 架构</h3>
+          <div class="space-y-2 font-mono text-sm">
+            <div class="flex items-center gap-2">
+              <span class="text-primary">▶</span>
+              <span>LLM Agent (Claude/GPT)</span>
+            </div>
+            <div class="flex items-center gap-2 ml-4">
+              <span class="text-secondary">├─</span>
+              <span>Skill/MCP Layer</span>
+            </div>
+            <div class="flex items-center gap-2 ml-8">
+              <span class="text-accent">│  ├─</span>
+              <span>工艺参数推荐</span>
+            </div>
+            <div class="flex items-center gap-2 ml-8">
+              <span class="text-accent">│  ├─</span>
+              <span>实时状态监控</span>
+            </div>
+            <div class="flex items-center gap-2 ml-8">
+              <span class="text-accent">│  └─</span>
+              <span>自适应优化</span>
+            </div>
+            <div class="flex items-center gap-2 ml-4">
+              <span class="text-secondary">├─</span>
+              <span>Moonraker API</span>
+            </div>
+            <div class="flex items-center gap-2 ml-4">
+              <span class="text-secondary">└─</span>
+              <span>Klipper Printer</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">核心能力</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">智能参数推荐</h3>
+            <p class="text-sm text-base-content/70">
+              根据材料类型、模型特征、打印机性能自动推荐最优切片参数组合
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">实时状态监控</h3>
+            <p class="text-sm text-base-content/70">
+              通过Moonraker API监控打印机状态，实时获取温度、位置、速度数据
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">工艺自适应优化</h3>
+            <p class="text-sm text-base-content/70">
+              打印过程中根据实时反馈动态调整速度、温度等参数，提升打印成功率
+            </p>
+          </div>
+        </div>
+        <div class="card bg-base-100 shadow">
+          <div class="card-body">
+            <h3 class="card-title text-lg">多智能体协作</h3>
+            <p class="text-sm text-base-content/70">
+              基于LangGraph构建多智能体系统，实现参数推荐、监控、优化的协同决策
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">技术栈</h2>
+      <div class="flex flex-wrap gap-3">
+        <div class="badge badge-lg badge-primary">LangGraph</div>
+        <div class="badge badge-lg badge-primary">LangChain</div>
+        <div class="badge badge-lg badge-outline">OrcaSlicer</div>
+        <div class="badge badge-lg badge-outline">Python</div>
+        <div class="badge badge-lg badge-outline">Moonraker API</div>
+        <div class="badge badge-lg badge-outline">Klipper</div>
+        <div class="badge badge-lg badge-outline">Claude/GPT</div>
+      </div>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">项目进展</h2>
+      <ul class="timeline timeline-vertical">
+        <li>
+          <div class="timeline-start">2026.06</div>
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-primary">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="timeline-end timeline-box">完成OrcaSlicer源码分析，确定集成方案</div>
+          <hr class="bg-primary"/>
+        </li>
+        <li>
+          <hr class="bg-primary"/>
+          <div class="timeline-start">2026.07</div>
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5 text-primary">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="timeline-end timeline-box">构建LangGraph多智能体架构原型</div>
+          <hr/>
+        </li>
+        <li>
+          <hr/>
+          <div class="timeline-start">2026.08</div>
+          <div class="timeline-middle">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+              <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm.75-13a.75.75 0 00-1.5 0v5c0 .414.336.75.75.75h4a.75.75 0 000-1.5h-3.25V5z" clip-rule="evenodd" />
+            </svg>
+          </div>
+          <div class="timeline-end timeline-box">集成Moonraker API，实现实时监控</div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="divider"></div>
+
+    <div class="mb-8">
+      <h2 class="text-2xl font-bold mb-3">相关资源</h2>
+      <div class="flex flex-wrap gap-2">
+        <a class="btn btn-sm btn-ghost" href="https://github.com/wangyh775/OrcaSlicer" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/>
+          </svg>
+          GitHub 仓库
+        </a>
+        <a class="btn btn-sm btn-ghost" href="/projects">← 返回项目列表</a>
+      </div>
+    </div>
+  </div>
+</BaseLayout>
